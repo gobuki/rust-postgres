@@ -81,9 +81,11 @@ pub fn expand_derive_tosql(input: DeriveInput) -> Result<TokenStream, Error> {
         }
     };
 
+    let (impl_generics, ty_generics, where_clause) = input.generics.split_for_impl();
+
     let ident = &input.ident;
     let out = quote! {
-        impl postgres_types::ToSql for #ident {
+        impl #impl_generics postgres_types::ToSql for #ident #ty_generics #where_clause {
             fn to_sql(&self,
                       _type: &postgres_types::Type,
                       buf: &mut postgres_types::private::BytesMut)

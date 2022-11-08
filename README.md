@@ -1,8 +1,13 @@
+
 # Rust-Postgres
+
+Note by forker [gobuki](https://github.com/gobuki): Minor changes on 'tosql_generic' branch. Not yet merged.
+
 
 PostgreSQL support for Rust.
 
 ## postgres [![Latest Version](https://img.shields.io/crates/v/postgres.svg)](https://crates.io/crates/postgres)
+
 
 [Documentation](https://docs.rs/postgres)
 
